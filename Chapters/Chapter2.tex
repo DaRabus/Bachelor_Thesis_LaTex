@@ -1,57 +1,27 @@
 % Indicate the main file. Must go at the beginning of the file.
 % !TEX root = ../main.tex
-
 %----------------------------------------------------------------------------------------
 % CHAPTER 2
 %----------------------------------------------------------------------------------------
 
-\chapter{Code Listings}
+\chapter{Problem investigation}
 
 \label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
 
 %----------------------------------------------------------------------------------------
 
-The package \href{https://www.overleaf.com/learn/latex/Code\_listing}{\code{listings}} permits to easily include existing code. Simply use the command \verb|\lstinputlisting[language=name]{path/to/file}|. See \href{https://www.overleaf.com/learn/latex/Code\_listing#Supported\_languages}{here} for a list of supported programming languages.
+\section{Current State of art}
 
+The transition to cloud computing is reshaping the landscape of software development and operations practices, with cloud-native architectures becoming increasingly common. This shift is introducing a vast array of tools and practices that organisations must navigate, driven by the rapid development of cloud-native technologies. The complexity of selecting, tracking and adapting these technologies for enterprise environments presents significant challenges. Within this evolving ecosystem, DevOps emerges as a critical element, merging software development (Dev) and IT operations (Ops) to streamline system development lifecycles and improve software quality.
 
-\lstinputlisting[language=Python,caption=External file: code/example.py]{Code/example.py}
+However, despite its growing adoption, the concept of DevOps lacks a consistent academic definition. It encompasses a range of interpretations, from toolchains and cultural practices to job titles and responsibilities. Humble and Molesky (2011) identify four fundamental pillars of DevOps:
 
-It is also possible to enter code directly into \LaTeX:
+\begin{itemize}
+    \item \textbf{Culture:} Sharing the responsibility for the deliverance of software
+    \item \textbf{Automation:} Automation is a good tool to increase the processes
+    \item \textbf{Measurement:} Quantified processes are helping to understand capability and setting goals
+    \item \textbf{Knowledge Sharing:} How to share the knowledge is the most crucial point
+\end{itemize}
 
-\begin{lstlisting}[language=C++]
-#include <stdio>
-void hello_world(void){
-   std::cout << "Hello World!" << std::endl;
-}    
-\end{lstlisting}
+Of these, Knowledge Sharing is of central importance as it underpins the effective adoption of DevOps practices and facilitates knowledge management in the organisation. \cite{HumbleMolesky2011}
 
-Alternatively, one can use the syntax highlighting toolbox \href{https://pygments.org/}{\code{Pygments}} in combination with the \LaTeX-package \href{www.overleaf.com/learn/latex/Code\_Highlighting\_with\_minted}{\code{minted}}. It provides slightly better results, as the code will actually be parsed.
-
-To install Pygments, use the following command. For \code{minted} to work properly, run the pdflatex tool with the flag \code{--shell-escape}. If you are using a TEX editor, you can modify the typesetting   command somewhere in the settings.
-
-\begin{lstlisting}[language=bash]
-# Make sure that Pygments is installed.
-python -m pip install pygments
-
-# Then add the --shell-escape flag to the command 
-# that is used to compile your LaTeX code.
-pdflatex --output-dir="$BUILD_DIR" \
-         --file-line-error \
-         --shell-escape \
-         --synctex=1 "$1"
-\end{lstlisting}
-
-
-
-% Set the following line to \iftrue if minted is available on your system.
-% See the above instructions to see how.
-
-\iffalse
-See below how the result looks like if minted is available on your system.
-
-\begin{listing}[!ht]
-\inputminted[linenos, bgcolor=codebackground, style=friendly]{python}{Code/example.py}
-\caption{Example from external file, parsed using \code{Pygments}}
-\end{listing}
-
-\fi
