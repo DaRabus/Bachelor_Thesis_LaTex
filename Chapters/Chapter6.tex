@@ -1,0 +1,87 @@
+% Indicate the main file. Must go at the beginning of the file.
+% !TEX root = ../main.tex
+
+%----------------------------------------------------------------------------------------
+% CHAPTER TEMPLATE
+%----------------------------------------------------------------------------------------
+
+
+\chapter{Evaluation} % Main chapter title
+
+\label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+As previously outlined in Chapter \ref{Chapter4} of this text, the three approaches to \ac{DevOps} were discussed in depth in Chapter \ref{Chapter2}. In this Chapter the results of the survey are compared to these statements to determinate the possible outcomes from the results of professionals.
+
+%----------------------------------------------------------------------------------------
+% SECTION 6
+%----------------------------------------------------------------------------------------
+\section{Role Based Information Highlighting in Documents}
+The survey results indicate a high level of support for the approach of Role-Based Information Highlighting. A significant proportion of professionals report feelings of being overwhelmed by the volume of information they receive. This highlights the need for more efficient and role-specific documentation strategies. Figure \ref{fig:results:highlighting:1} demonstrates that a substantial portion of respondents find current documentation overwhelming. This supports the need for role-specific highlights. Furthermore, the considerable positive response to potential \ac{AI}-driven highlighting approach in Figure \ref{fig:results:highlighting:2} and the moderate optimism regarding their practical implementation, as seen in Figure \ref{fig:results:highlighting:3}, serve to reinforce the proposed approach set out in Chapter \ref{Chapter4}.
+
+Although concerns have been voiced regarding the ease with which \ac{AI} can be integrated into the current process and its potential to replace role-specific pages, the prevailing opinion is that the introduction of \ac{AI} into the documentation production process could lead to significant improvements in usability.
+
+Future work should concentrate on developing \ac{AI} algorithms further in order to gain a deeper understanding of the roles of the users and to ensure that the content is tailored with greater precision.
+
+
+\section{Decision Logs Within a Mirrored Approach}
+The results of the survey show a clear consensus on the importance of keeping an updated and thorough record of decisions taken. This is illustrated by the high scores in Figure \ref{fig:results:decisions:1}. The need to have robust systems in place that can ensure the transparency and continuity of the decision-making process is thus underlined. However, Figure \ref{fig:results:decisions:2} shows that there is often a discrepancy between expectations and actual practice in the implementation of decision logs. The majority of respondents reported that decision logs were either not consistently up to date or not well formatted. This suggests that there is significant potential for improvement in this area.
+Consistent with the survey feedback is the proposed approach of maintaining decision logs in the code-base and mirroring them to a central information storage. This indicates a preference for integrating decision logs in the code-base, as shown in Figure \ref{fig:results:decisions:3}. Such integration is considered by many to improve the timeliness and relevance of these logs. In addition, Figure \ref{fig:results:decisions:4} highlights the importance of accessibility to non-developers, which strengthens the case for mirroring these logs onto a more accessible platform. This approach would ensure inclusivity for all stakeholders.
+
+Responses to the ease of using automation tools to mirror decision protocols, as shown in Figure \ref{fig:results:decisions:5}, are mixed, suggesting that while there is optimism about the potential of these tools, significant work remains to be done to address usability and integration challenges.
+
+Future research should be directed towards developing more user-friendly and integrated automated tools for mirroring, which would ensure that decision logs are not only current and relevant, but also accessible to all team members. This could result in improved collaboration and transparency within \ac{DevOps} teams.
+
+
+\section{Infrastructure as Code}
+
+The findings of the survey revealed considerable variations in participants' levels of awareness and familiarity with \ac{IaC}. Figures \ref{fig:results:iac:1} and \ref{fig:results:iac:2} illustrate the diversity in knowledge. While a sizeable proportion of the workforce demonstrated a robust grasp of \ac{IaC}, there remained a considerable discrepancy in comprehension among many team members.
+
+The integration of \ac{IaC} tools such as Terraform within the code base to manage infrastructure directly is confirmed by the survey as being an essential approach. Figure \ref{fig:results:iac:3} supports the hypothesis that \ac{IaC} not only optimises technical processes, but also enhances team collaboration and shared responsibility. However, the challenges noted in the survey responses, including complexity, migration issues, and security concerns, underline the importance of identifying and addressing barriers to the implementation of \ac{IaC} in order to maximise the potential benefits.
+
+The responses concerning the challenges encountered in implementing \ac{IaC}, particularly the complexity and steep learning curve associated with tools like Terraform, highlight the necessity for enhanced training and support for development teams. Furthermore, the issues with legacy systems and the concentration of expertise within small groups necessitate a concerted effort to democratize knowledge and improve documentation.
+
+Future initiatives should concentrate on the development of extensive educational programs with the objective of closing the existing knowledge gaps, the improvement of security protocols with a view to managing the risks associated with misconfiguration, and the establishment of a culture of shared responsibility. The implementation of these measures would have a significantly beneficial impact on the adoption and effectiveness of \ac{IaC}, resulting in the creation of more robust and efficient development environments.
+
+\section{Conclusion}
+Based on the validation done with the results of the survey and the prior created Blueprint of a possible approach this section is about the demonstration of this, how a proposed architecture could fit the requirements together into aan approach to fulfill the research questions.
+
+This proposed system architecture can be demonstrated with the use case of adaption of new \ac{DevOps} engineer to these practises, who would establish these into the teams. 
+
+\begin{table}[h!]
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component of the Approach}  & \textbf{Possible Realization}   \\[1ex]
+\hline
+Role-based Information Highlighting & \ac{ACDC} with \ac{GPT} and \ac{AST}    \\[1ex]
+\hline
+Decision Logs  &  Automated Script integrated in \ac{CI}  \\[1ex]
+\hline
+Infrastructure as Code &   Terraform \\[1ex]
+\hline
+\end{tabular}
+\caption{Table - Evaluation of proposed system architecture with software components.}
+\label{table:1}
+\end{table}
+
+It's required to clarify some details about several components of these Approaches:
+
+The idea of Role-based Information Highlighting Approach is based on the research presented in chapter \ref{Chapter2} of the Automation section. Procko \cite{Procko2024CodeDocumentation} demonstrated the functionality of automatic code generation in Git repositories in real-time.
+
+In a mirrored approach, decision logs are typically solved by an automated script\footnote{\url{https://jasonjwilliamsny.github.io/wrangling-genomics/01-automating_a_workflow.html}}, which may be written in a variety of languages, but is often in shell. This enables the script to conduct operations, including those in shellcode\footnote{\url{https://en.wikipedia.org/wiki/Shellcode}}.
+
+Terraform is an infrastructure as code tool that enables the safe and predictable provisioning and management of infrastructure in any cloud. It is developed by HashiCorp\footnote{\url{https://www.hashicorp.com/}} and enables the seamless integration of cloud infrastructure as code.
+Based on the analysis, it can be concluded that the proposed system architecture is feasible for implementation into a software engineering team. In order to gain further insight into the efficacy of these approaches, it is necessary to analyse the extent to which they correlate with the initial defined research questions, which are presented in chapter \ref{Chapter1}.
+
+The initial research question \ref{RQ1} concerns the optimal format for documenting the requisite data for each team role in a \ac{SCRUM} team. Our approach in Chapter \ref{Chapter4} leads us to conclude that the optimal format for the documentation is based on the defined roles in the team, which are predefined and electable in the documentation tool. In order to ensure the continued maintenance of the requisite data, the proposed solution employs the use of an \ac{AI}, which is tasked with the sorting of the data based on keywords within the content.
+
+Furthermore, the next research question \ref{RQ2} concerns the optimal method for maintaining and structuring decision logs. The proposed approach from Chapter \ref{Chapter4} suggests storing the decision logs primarily in the related code base to ensure their continued maintenance. An automated shellscript can be used to automate the mirroring to a centralized information storage. This mirroring ensures that the decision logs are accessible and utilized by stakeholders.
+
+In conclusion, the third research question \ref{RQ3} can be addressed by focusing on the \ac{IaC} feature of the proposed approach. By utilising a provider such as Terraform, it is possible to integrate the two aforementioned features and extend the collaboration. The introduction of less granular access rights, as a result of the storage of deployment configurations and settings in the related code base, has facilitated easier access to the required data for employees, thus enabling a common understanding of the right information and a deeper understanding of how these processes work. The integration of the first two approaches within this infrastructure is facilitated by the introduction of automatic deployment scripts and infrastructure as code. The \ac{ACDC} feature can be integrated into the \ac{CI} process during the deployment of new information to the appropriate system. Furthermore, the integration of mirroring within the decision logs can be achieved through the use of Terraform and an automated \ac{CI} and \ac{CD} pipeline.
+
+\section{Future Work}
+The final chapter presents the study's findings and conclusions, which are based on a systematic review of the literature. It also discusses the limitations of the study and the contributions it makes to the field.
+
+The study was conducted in a methodical manner to address the research questions. A comprehensive review of the literature enabled the identification of knowledge gaps related to the four fundamental pillars of \ac{DevOps}, as outlined in the research by Humble and Molesky \cite{HumbleMolesky2011}. The research was conducted based on the framework of Hevner \cite{Hevner2004}, where we use the different cycles to identify relevant data and create a blueprint for a potential approach to address the identified knowledge gaps.
+The main finding of the research on \ac{DevOps} can be described as a set of features contained within a toolbox that can be used to enhance collaboration and productivity within a team. Linking these different helpers with engineers' daily actions in the development process allows us to declare the achievement of the research purpose set out in Chapter \ref{Chapter1} of the research.
+
+The obvious limitation of the research is the absence of practical implementation of the proposed features. Another limitation of the conducted research is the lack of practical experience in using the proposed approaches in real operational conditions. This research presents the concept of a system for \ac{DevOps}, but does not include field tests or feedback from potential users. The next step of the research should be to create a prototype based on the available technologies listed in the prior section of this chapter, filling the aforementioned gap.

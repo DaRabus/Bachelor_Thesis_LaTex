@@ -25,46 +25,36 @@
 }
 
 
-
-\chapter{Design and proposed solution}
+\chapter{Personas}
 
 \label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter2} 
 
-%----------------------------------------------------------------------------------------
-In the previous chapter \ref{Chapter2} of this text, we explored four of the key pillars of DevOps, and concluded that the related issues for solving the key problems within a SCRUM team, and in DevOps in general, are not a single point of truth but rather a whole web of aspects to be solved. The purpose of this chapter is to propose a solution that addresses the challenges that were identified. The focus is on the efficient management and access to information tailored to the different roles within a SCRUM team.
-
 \section{Identification of SCRUM Team Roles}
 
-As defined in Mundra \cite{Mundra2013PracticalScrum} A Scrum team generally contains four to ten professionals. SCRUM is not a magic process but works because the team works properly and each member follows each other
+As defined by Mundra \cite{Mundra2013PracticalScrum}, a \ac{SCRUM} team typically comprises four to ten professionals.
 
-\begin{itemize}
-    \item \textbf{Product Owner:} Represents the Business; coordinates requirements from n number of end-users/customers and prioritizes requirements.
-    \item \textbf{Scrum Master:} The team coach on Scrum practices; removes impediments faced by team members, e.g., coordination with other teams for any dependencies.
-    \item \textbf{Team Members:} The Developers and Testers and Others; involves developers who focus on the technical development and testers who ensure the product meets quality standards.
-\end{itemize}
-
-
-\section{Requirements and Features}
-
-Designing a successful solution is based on the principle that the right information needs to be available in a timely manner, tailored to the specific needs of each role within a SCRUM team. In order to do this, the design of the solution must have the following key features
-
-\begin{itemize}
-    \item \textbf{Role-based Information Highlighting:} The system should allow users to access the information most relevant to their responsibilities by selecting their role (e.g. project manager, developer). This will ensure that team members are not overwhelmed with unnecessary detail. They will be able to focus on the information that is relevant to their role. This process should be maintained and ensured by an AI Model which is configured for the right roles and is trying to highlight the information based on keywords used in the Text.
-    \item \textbf{Comprehensive View Option:} While role-specific information is critical, the ability to view the documentation as a whole ("all roles") is equally important for a holistic understanding of the project and for roles that require a broader overview.
-    \item \textbf{Collaborative Documentation Process:} The creation of documentation needs to involve the input of all members of the team to ensure that the information needs of the different roles are adequately represented and addressed. This cooperative approach promotes a more inclusive and comprehensive knowledge management system.
-    \item \textbf{Automation to improve the maintainability} The maintenance of the documentations should be
-    possible to be semi automated within AI Toolings, a possible implementation could be determinated by the documentation in the Code Base which is then abstracted within AI Toolings to the right papers.
-    \item \textbf{Maintainability of the Decision Logs within the Mirrored Approach} The aim of the decision logs is to ensure that they are always maintained and also mirrored, both to the code base they refer to and to documentation important to business and "architectural" decisions.
-    \item \textbf{Infrastructure-as-Code to sustain shared responsibility} Getting everyone in the development team on the same page is the goal of Infrastructure as Code with tools like Terraform. By automating the CI / CD process, the code that goes into the 'main' branch of the project is checked within deployments and tests that are all controlled by Infrastructure as Code, and the pods are also recreated for E2E testing, ensuring a real test environment that is very close to the production environment.
-\end{itemize}
-
-
-
+\begin{outline}
+    \1 \textbf{Product Owner:}
+    \2 represents the business
+    \3 coordinates requirements
+    \3 prioritizes requirements
+    \1 \textbf{SCRUM Master:}
+    \2 the team coach
+    \3 removes impediments faced by team members
+    \3 coordination with other teams for any dependencies
+    \1 \textbf{Team Members:}
+    \2 the developers and testers and others
+    \3 involves developers who focus on the technical development
+    \3 testers who ensure the product meets quality standards
+\end{outline}
 
 \section{Personas for SCRUM Team Roles}
 
-To tailor our proposed solution to the diverse needs within a SCRUM team, we introduce detailed personas representing each key role. These personas are designed to guide the development process by highlighting the specific requirements and backgrounds of team members.
+To tailor our proposed approach to the diverse needs within a \ac{SCRUM} team, we introduce detailed personas representing each key role. These personas are designed to guide the development process by highlighting the specific requirements and backgrounds of team members.
 
+\pagebreak
+
+\begin{figure}[h!]
 \subsection*{Persona: Emma - Product Owner}
 \begin{persona}{Product Owner: Emma}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
@@ -72,28 +62,59 @@ To tailor our proposed solution to the diverse needs within a SCRUM team, we int
     \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Emma.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
+  \fontsize{10pt}{9.6pt}\selectfont
     \textbf{Age:} 38\\
-    \textbf{Background:} Emma has a rich background in product management with extensive experience in the technology sector.\\
-    \textbf{Needs:} High-level overview of project progress, clear summaries of technical decisions.
+    \textbf{Background:} 
+    \begin{itemize}
+        \item Background in Product Management
+        \item Extensive experience in the technology sector
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item High-level overview of project progress
+        \item Clear Summaries of technical decisions
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Emma, a Product Owner}
+\label{fig:persona:emma}
+\end{figure}
 
 
-\subsection*{Persona: Lucas - Scrum Master}
-\begin{persona}{Scrum Master: Lucas}
+
+
+\begin{figure}[h!]
+\subsection*{Persona: Lucas - SCRUM Master}
+\begin{persona}{SCRUM Master: Lucas}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
   \begin{tcolorbox}[width=0.2\linewidth, colback=white, colframe=white, boxrule=0pt, halign=center]
    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Lucas.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
+  \fontsize{10pt}{9.6pt}\selectfont
     \textbf{Age:} 33\\
-    \textbf{Background:} Certified SCRUM master, champion of agile methodologies.\\
-    \textbf{Needs:} Tools for workflow management, performance tracking, and impediment resolution.
+    \textbf{Background:} 
+    \begin{itemize}
+        \item Certified \ac{SCRUM} Master
+        \item Champion of Agile Methodologies
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item Tools for workflow management
+        \item Tools for performance tracking
+        \item Tools for impediment resolution
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Lucas, a \ac{SCRUM} Master}
+\label{fig:persona:lucas}
+\end{figure}
 
+\pagebreak
+
+\begin{figure}[h!]
 \subsection*{Persona: Mia - Front-End Developer}
 \begin{persona}{Front-End Developer: Mia}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
@@ -101,13 +122,28 @@ To tailor our proposed solution to the diverse needs within a SCRUM team, we int
    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Mia.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
+  \fontsize{10pt}{9.6pt}\selectfont
     \textbf{Age:} 29\\
-    \textbf{Background:} Specializing in front-end development, Mia works closely with designers to implement engaging user interfaces, using technologies like HTML, CSS, and JavaScript.\\
-    \textbf{Needs:} Detailed documentation on UI/UX design principles, integration with back-end systems, and project's visual and functional requirements.
+            \textbf{Background:} 
+    \begin{itemize}
+        \item Specialized in front-end development
+        \item works closely with designers to implement engaging user interfaces
+        \item work with technologies like HTML, CSS, and Typescript.
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item Detailed documentation on \ac{UI}/ \ac{UX} design principles
+        \item Documentation for integration with back-end systems
+        \item project's visual and functional requirements
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Mia, a Front-End Developer}
+\label{fig:persona:mia}
+\end{figure}
 
+\begin{figure}[h!]
 \subsection*{Persona: Alex - Back-End Developer}
 \begin{persona}{Back-End Developer: Alex}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
@@ -115,13 +151,31 @@ To tailor our proposed solution to the diverse needs within a SCRUM team, we int
    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Alex.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
-    \textbf{Age:} 35\\
-    \textbf{Background:} Alex focuses on server-side development, managing databases, and developing application logic. He is proficient in various programming languages and back-end frameworks.\\
-    \textbf{Needs:} In-depth technical documentation on APIs, database schemas, system architecture, and performance optimization guidelines.
+  \fontsize{10pt}{9.6pt}\selectfont
+    \textbf{Age:} 55\\
+    \textbf{Background:} 
+    \begin{itemize}
+        \item focuses on server-side development
+        \item managing databases interfaces
+        \item developing application logic in Typescript
+        \item proficient in various programming languages and back-end frameworks
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item In-depth technical documentation on \ac{API}
+        \item system architecture overview
+        \item performance optimization guidelines
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Alex, a Back-End Developer}
+\label{fig:persona:alex}
+\end{figure}
 
+\pagebreak
+
+\begin{figure}[h!]
 \subsection*{Persona: Klaus - Front-End Developer}
 \begin{persona}{Front-End Developer: Klaus}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
@@ -129,13 +183,28 @@ To tailor our proposed solution to the diverse needs within a SCRUM team, we int
    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Klaus.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
+  \fontsize{10pt}{9.6pt}\selectfont
     \textbf{Age:} 31\\
-    \textbf{Background:} Specializing in front-end development, Klaus works closely with designers to implement engaging user interfaces, using technologies like HTML, CSS, and JavaScript.\\
-    \textbf{Needs:} Detailed documentation on UI/UX design principles, integration with back-end systems, and project's visual and functional requirements.
+            \textbf{Background:} 
+    \begin{itemize}
+        \item Specialized in front-end development
+        \item works closely with designers to implement engaging user interfaces
+        \item work with technologies like HTML, CSS, and Typescript.
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item Detailed documentation on \ac{UI}/ \ac{UX} design principles
+        \item Documentation for integration with back-end systems
+        \item project's visual and functional requirements
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Klaus, a Front-End Developer}
+\label{fig:persona:klaus}
+\end{figure}
 
+\begin{figure}[h!]
 \subsection*{Persona: Karin - Back-End Developer}
 \begin{persona}{Back-End Developer: Karin}
 \begin{tcbraster}[raster columns=2, raster column skip=5mm]
@@ -143,37 +212,38 @@ To tailor our proposed solution to the diverse needs within a SCRUM team, we int
    \includegraphics[width=\linewidth, height=6cm, keepaspectratio]{Images/Karin.jpg}
   \end{tcolorbox}
   \begin{tcolorbox}[width=0.8\linewidth, colback=white, colframe=white, boxrule=0pt]
+\fontsize{10pt}{9.6pt}\selectfont
     \textbf{Age:} 32\\
-    \textbf{Background:} Karin focuses on server-side development, managing databases, and developing application logic. He is proficient in various programming languages and back-end frameworks.\\
-    \textbf{Needs:} In-depth technical documentation on APIs, database schemas, system architecture, and performance optimization guidelines.
+    \begin{itemize}
+        \item focuses on server-side development
+        \item managing databases interfaces
+        \item developing application logic in Typescript
+        \item proficient in various programming languages and back-end frameworks
+    \end{itemize}
+    \textbf{Needs:}
+        \begin{itemize}
+        \item In-depth technical documentation on \ac{API}
+        \item system architecture overview
+        \item performance optimization guidelines
+    \end{itemize}
   \end{tcolorbox}
 \end{tcbraster}
 \end{persona}
+\caption{Persona with \ac{AI}-Generated Image of Karin, a Back-End Developer}
+\label{fig:persona:karin}
+\end{figure}
+\pagebreak
 
 
-\section{Situation Overview}
 
-Facing the challenge of outdated documentation and decision logs, a SCRUM team comprising distinct personas seeks an innovative solution. This chapter outlines a strategy that leverages the four pillars of DevOps—Culture, Automation, Measurement, and Knowledge Sharing, to address these challenges, especially with the onboarding of two new developers: Klaus, a Front-End Developer, and Karin, a Back-End Developer.
-
-The team's current documentation and decision logs are significantly outdated. This poses a challenge for integrating Klaus and Karin into the workflow efficiently. Concerns are raised by both business stakeholders and existing team members about the potential for information gaps. The team realizes the need for an updated approach to maintain their documentation and logs to ensure a smooth transition for the newcomers.
-
-\section{Strategic Approach}
-To navigate these challenges, the team decides to implement solutions which embodies the core principles of DevOps, tailored to their unique dynamics and incorporating the personas of Emma (Product Owner), Lucas (Scrum Master), along with Alex and Mia.
-
-\subsection{Cultivating a Unified Culture}
-The team, led by Emma and Lucas, acknowledges the importance of fostering a culture that values continuous improvement and collective responsibility for documentation. Regular team meetings are instituted to discuss updates, ensuring that all members, including Alex and Mia, are aligned and engaged in maintaining the project's documentation and decision logs.
-
-\subsection{Facilitating Knowledge Sharing with Confluence}
-To bolster knowledge sharing, Confluence as a centralized knowledge management platform is adopted. This platform serves as a repository for all documentation and decision logs, offering features like tagging and searching to facilitate easy access. The team commits to documenting their workflows and decision-making processes, thereby capturing and sharing tacit knowledge among team members, including the perspectives of Alex and Mia.
-
-\subsection{Leveraging Automation with AI}
-To solve the problem of outdated documentation, the team decides to use AI tools such as ChatGPT. This requires more effort to update the structure of the documentation and then adapt the automation to the capabilities, keeping decision logs in the relevant codebase and automatically synchronising them with the associated Confluence page. Code-based documentation should be considered as being interpreted by the AI rather than directly reflected in the documentation, this requires additional definitions for future development and involving everyone in the process of what exactly should be commented on to ensure the documentation is kept up to date with the relevant information.
-
-\subsection{Implementing Infrastructure as Code iterative}
-To ensure better onboarding in the future and to increase the level of shared responsibility across the project team, the team decides to implement Terraform as an Infrastructure-as-Code provider. The migration will not be possible immediately due to the increased effort within the overall structure, but for future iterations the migration will be planned and implemented iteratively within the next sprints. The IaC also helps to ensure that new team members have the opportunity to learn how the deployment and infrastructure work together, and the integration of the IaC helps to improve the maintenance of decision logs within the correct codebase, as with Terraform the deployments will be available as scripts.
-
-\subsection{Onboarding Klaus and Karin}
-Introducing Klaus and Karin has been carefully planned. The new changes may not apply to everything yet. But they are in place for the future. The new developers can already get involved in the new integration, as well as the new plans for the Terraform integrations. It's important that the new developers are made aware of this process as part of the new implementation for interpreting code comments in the right place in the documentation, so that they use it from the start. In addition, regular meetings will be scheduled to answer any questions they may have and to incorporate their feedback into the continuous improvement of the documentation process.
 
 \section{Conclusion}
-This proposed solution, centred on the DevOps pillars, presents a solution that involves additional work and new process integrations.To ensure resilient integration of these new processes, the entire process must be tracked within regular SCRUM sprints. Depending on the workload and the team's capacity for additional improvement stories, the new integrations may not be fully integrated before the new onboarding. Implementing this solution should make a significant contribution to the team's efficiency, productivity and overall success.
+This chapter has sought to illustrate the composition and dynamics of a \ac{SCRUM} team, through the identification and detailed description of key personas. The distinct roles of the Product Owner, \ac{SCRUM} Master, and various team members are elucidated, in order to demonstrate how these roles collectively contribute to the success of a \ac{SCRUM} project.
+
+The personas presented – Emma (Product Owner), Lucas (\ac{SCRUM} Master), Mia (Front-End Developer), Alex (Back-End Developer), Klaus (Front-End Developer), and Karin (Back-End Developer) – illustrate the diverse backgrounds, needs, and responsibilities within a \ac{SCRUM} team. Each persona highlights the specific expertise and perspectives that are essential for effective teamwork and project management.
+
+The Product Owner, represented by Emma, is responsible for ensuring that the business requirements are prioritised and communicated effectively to the team. Lucas, as the \ac{SCRUM} Master, facilitates \ac{SCRUM} practices and removes impediments, ensuring that the team can function smoothly. The developers, Mia, Alex, Klaus, and Karin, bring their technical skills and collaborate to deliver high-quality software.
+
+The personas demonstrate the value of clear communication, mutual support and the integration of diverse skills and perspectives, which are essential elements of an effective \ac{SCRUM} team. This collaborative approach not only enhances the efficiency and productivity of the team but also fosters a culture of continuous improvement and innovation.
+
+In summary, the detailed personas provide an invaluable practical framework for understanding the roles and interactions within a \ac{SCRUM} team.
