@@ -10,7 +10,7 @@
 
 \label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-As previously outlined in Chapter \ref{Chapter4} of this text, the three approaches to \ac{DevOps} were discussed in depth in Chapter \ref{Chapter2}. In this Chapter the results of the survey are compared to these statements to determinate the possible outcomes from the results of professionals.
+As previously outlined in chapter \ref{Chapter4} of this text, the three approaches to \ac{DevOps} were discussed in depth in chapter \ref{Chapter2}. In this chapter the results of the survey are compared to these statements to determinate the possible outcomes from the results of professionals.
 
 %----------------------------------------------------------------------------------------
 % SECTION 6
@@ -43,14 +43,14 @@ The responses concerning the challenges encountered in implementing \ac{IaC}, pa
 Future initiatives should concentrate on the development of extensive educational programs with the objective of closing the existing knowledge gaps, the improvement of security protocols with a view to managing the risks associated with misconfiguration, and the establishment of a culture of shared responsibility. The implementation of these measures would have a significantly beneficial impact on the adoption and effectiveness of \ac{IaC}, resulting in the creation of more robust and efficient development environments.
 
 \section{Conclusion}
-Based on the validation done with the results of the survey and the prior created Blueprint of a possible approach this section is about the demonstration of this, how a proposed architecture could fit the requirements together into aan approach to fulfill the research questions.
+Based on the validation done with the results of the survey and the prior created Blueprint of a possible approach this section is about the demonstration of this, how a proposed architecture could fit the requirements together into an approach to fulfill the research questions.
 
-This proposed system architecture can be demonstrated with the use case of adaption of new \ac{DevOps} engineer to these practises, who would establish these into the teams. 
+This proposed system architecture can be demonstrated with the use case of adapting \ac{DevOps} engineers to these practices that would establish them in the teams. 
 
 \begin{table}[h!]
 \begin{tabular}{|c|c|}
 \hline
-\textbf{Component of the Approach}  & \textbf{Possible Realization}   \\[1ex]
+\textbf{component of the approach}  & \textbf{possible realization}   \\[1ex]
 \hline
 Role-based Information Highlighting & \ac{ACDC} with \ac{GPT} and \ac{AST}    \\[1ex]
 \hline
@@ -63,7 +63,7 @@ Infrastructure as Code &   Terraform \\[1ex]
 \label{table:1}
 \end{table}
 
-It's required to clarify some details about several components of these Approaches:
+It's required to clarify some details about several components of these aproaches:
 
 The idea of Role-based Information Highlighting Approach is based on the research presented in chapter \ref{Chapter2} of the Automation section. Procko \cite{Procko2024CodeDocumentation} demonstrated the functionality of automatic code generation in Git repositories in real-time.
 
@@ -76,10 +76,12 @@ The initial research question \ref{RQ1} concerns the optimal format for document
 
 Furthermore, the next research question \ref{RQ2} concerns the optimal method for maintaining and structuring decision logs. The proposed approach from Chapter \ref{Chapter4} suggests storing the decision logs primarily in the related code base to ensure their continued maintenance. An automated shellscript can be used to automate the mirroring to a centralized information storage. This mirroring ensures that the decision logs are accessible and utilized by stakeholders.
 
-In conclusion, the third research question \ref{RQ3} can be addressed by focusing on the \ac{IaC} feature of the proposed approach. By utilising a provider such as Terraform, it is possible to integrate the two aforementioned features and extend the collaboration. The introduction of less granular access rights, as a result of the storage of deployment configurations and settings in the related code base, has facilitated easier access to the required data for employees, thus enabling a common understanding of the right information and a deeper understanding of how these processes work. The integration of the first two approaches within this infrastructure is facilitated by the introduction of automatic deployment scripts and infrastructure as code. The \ac{ACDC} feature can be integrated into the \ac{CI} process during the deployment of new information to the appropriate system. Furthermore, the integration of mirroring within the decision logs can be achieved through the use of Terraform and an automated \ac{CI} and \ac{CD} pipeline.
+In conclusion, the third research question \ref{RQ3} can be addressed by focusing on the \ac{IaC} feature of the proposed approach. By utilising a provider such as Terraform, it is possible to integrate the two aforementioned features and extend the collaboration. The introduction of less granular access rights, as a result of the storage of deployment configurations and settings in the related code base, has facilitated easier access to the required data for employees, thus enabling a common understanding of the right information and a deeper understanding of how these processes work.
+
+The integration of the first two approaches within this infrastructure is facilitated by the introduction of automatic deployment scripts and \ac{IaC}. The \ac{ACDC} feature can be integrated into the \ac{CI} process during the deployment of new information to the appropriate system. Furthermore, the integration of mirroring within the decision logs can be achieved through the use of Terraform and an automated \ac{CI} and \ac{CD} pipeline.
 
 \section{Future Work}
-The final chapter presents the study's findings and conclusions, which are based on a systematic review of the literature. It also discusses the limitations of the study and the contributions it makes to the field.
+The final section presents the study's findings and conclusions, which are based on a systematic review of the literature. It also discusses the limitations of the study and the contributions it makes to the field.
 
 The study was conducted in a methodical manner to address the research questions. A comprehensive review of the literature enabled the identification of knowledge gaps related to the four fundamental pillars of \ac{DevOps}, as outlined in the research by Humble and Molesky \cite{HumbleMolesky2011}. The research was conducted based on the framework of Hevner \cite{Hevner2004}, where we use the different cycles to identify relevant data and create a blueprint for a potential approach to address the identified knowledge gaps.
 The main finding of the research on \ac{DevOps} can be described as a set of features contained within a toolbox that can be used to enhance collaboration and productivity within a team. Linking these different helpers with engineers' daily actions in the development process allows us to declare the achievement of the research purpose set out in Chapter \ref{Chapter1} of the research.
